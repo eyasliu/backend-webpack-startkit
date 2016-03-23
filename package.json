@@ -9,8 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "koa": "^1.2.0",
-    "nodemon": "^1.9.1"
+    "koa": "^1.2.0"
   },
   "devDependencies": {
     "babel": "^6.5.2",
@@ -21,6 +20,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "gulp": "^3.9.1",
     "json-loader": "^0.5.4",
+    "nodemon": "^1.9.1",
     "webpack": "^1.12.14"
   }
 }
