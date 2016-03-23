@@ -1,5 +1,6 @@
-var path = require('path');
-var fs = require('fs');
+import webpack from 'webpack';
+import path from 'path';
+import fs from 'fs';
 
 var nodeModules = fs.readdirSync('node_modules')
   .filter(function(x) {
@@ -40,4 +41,8 @@ module.exports = {
       },
     ]
   },
+  plugins:[
+    new webpack.NoErrorsPlugin(),
+    new webpack.HotModuleReplacementPlugin()
+  ]
 }

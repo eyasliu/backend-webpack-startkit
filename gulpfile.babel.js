@@ -1,7 +1,8 @@
 import gulp from 'gulp';
 import webpack from 'webpack';
 import nodemon from 'nodemon';
-import webpackConfig from './webpack.config';
+import webpackDev from './webpack.dev';
+import webpackPro from './webpack.pro';
 
 gulp.task('server', ['server-watch'], () => {
   nodemon({
@@ -18,7 +19,7 @@ gulp.task('server', ['server-watch'], () => {
 })
 
 gulp.task('server-watch', () => {
-  webpack(webpackConfig).watch(100, (err, stats) => {
+  webpack(webpackDev).watch(100, (err, stats) => {
     console.log(stats.toString({
         chunks: false,
         colors: true,
@@ -29,7 +30,7 @@ gulp.task('server-watch', () => {
 })
 
 gulp.task('build', () => {
-  webpack(webpackConfig).run((err, stats) => {
+  webpack(webpackPro).run((err, stats) => {
     console.log(stats.toString({
         chunks: false,
         colors: true,
