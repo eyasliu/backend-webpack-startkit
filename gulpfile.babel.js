@@ -27,3 +27,13 @@ gulp.task('server-watch', () => {
     if(!err) nodemon.restart();
   })
 })
+
+gulp.task('build', () => {
+  webpack(webpackConfig).run((err, stats) => {
+    console.log(stats.toString({
+        chunks: false,
+        colors: true,
+      })
+    );
+  })
+})
