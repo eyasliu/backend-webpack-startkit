@@ -19,3 +19,4 @@ npm start
 ```
 npm run build
 ```
+打包后的文件名是 `app.[hash].js`，文件经过压缩。
