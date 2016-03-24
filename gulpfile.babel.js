@@ -1,8 +1,8 @@
 import gulp from 'gulp';
 import webpack from 'webpack';
 import nodemon from 'nodemon';
-import webpackDev from './webpack.dev';
-import webpackPro from './webpack.pro';
+import webpackDev from './config/webpack.dev';
+import webpackPro from './config/webpack.pro';
 
 gulp.task('server', ['server-watch'], () => {
   nodemon({
@@ -11,7 +11,6 @@ gulp.task('server', ['server-watch'], () => {
     },
     script: './build/app.js',
     ignore: ['*'],
-    // watch: [],
     ext: 'noop'
   }).on('restart', () => {
     console.log('restart server ok.');

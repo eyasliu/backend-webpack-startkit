@@ -1,8 +1,13 @@
-import webpackDev from './webpack.dev';
+import webpackDev from './webpack.base';
 import webpack from 'webpack';
 
-webpackDev.output.filename = '[name].[hash].js';
-webpackDev.plugins = [
+export default {
+  ...webpackDev,
+  output: {
+    ...webpackDev.output,
+    filename: 'app.[hash].js',
+  },
+  plugins: [
   new webpack.NoErrorsPlugin(),
   new webpack.optimize.UglifyJsPlugin({
     compress: {
@@ -10,5 +15,5 @@ webpackDev.plugins = [
     },
     comments: false
   })
-];
-export default webpackDev;
+]
+};

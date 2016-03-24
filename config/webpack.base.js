@@ -8,9 +8,9 @@ var nodeModules = fs.readdirSync('node_modules')
   });
 
 module.exports = {
-  entry: {
-    app: './index.js'
-  },
+  entry: [
+    './index.js'
+  ],
   target: 'node',
   node: {
     __dirname: true,
@@ -26,8 +26,8 @@ module.exports = {
     }
   ],
   output: {
-    path: path.join(__dirname, 'build'),
-    filename: '[name].js',
+    path: path.join(__dirname, '../build'),
+    filename: 'app.js',
     publicPath: '/build/'
   },
   module: {
@@ -40,9 +40,5 @@ module.exports = {
         loader: 'json'
       },
     ]
-  },
-  plugins:[
-    new webpack.NoErrorsPlugin(),
-    new webpack.HotModuleReplacementPlugin()
-  ]
+  }
 }
